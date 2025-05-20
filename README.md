@@ -63,7 +63,7 @@ flask-portfolio/
 │   │   └── style.css
 │   ├── images/
 │   │   ├── project2.jpg
-│   │   └── карточка1.jpg
+│   │   └── project1.jpg
 │   └── favicon.ico
 ├── templates/
 │   ├── base.html
