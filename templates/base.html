@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио UI/UX дизайнера с современными проектами и кейсами">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Главная (Время)</a>
+        <a href="/home">Портфолио</a>
+        <a href="/blog">Блог</a>
+        <a href="/about">Обо мне</a>
+        <a href="/contacts">Контакты</a>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+<script>
+    // Lazy load images
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('.portfolio-item img');
+
+        images.forEach(img => {
+            const tempImg = new Image();
+            tempImg.src = img.src;
+            tempImg.onload = () => {
+                img.classList.add('loaded');
+            };
+        });
+    });
+</script>
+</body>
+</html>

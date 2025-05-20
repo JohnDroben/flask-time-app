@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Дробенюк Георгий{% endblock %}
+
+
+{% block content %}
+    <h1>Вот мои работы </h1>
+    <p> Я занимаюсь созданием удобных и красивых интерфейсов для веб-приложений. </p>
+<div class="portfolio-grid">
+    <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Проект 1">
+        <div class="portfolio-info">
+            <h3> Бесплатный тренинг</h3>
+            <p>UI/UX дизайн для Yudaev@scool компании</p>
+            <div class="portfolio-hover">
+                <p>Инструменты: Figma, Photoshop, Illustrator</p>
+                <a href="#" class="project-link">Подробнее →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/project2.png') }}" alt="Проект 2">
+        <div class="portfolio-info">
+            <h3>Сайт тренировок</h3>
+            <p>UI/UX дизайн для Fitnest компании</p>
+            <div class="portfolio-hover">
+                <p>Инструменты: Figma, Photoshop, Illustrator</p>
+                <a href="#" class="project-link">Подробнее →</a>
+            </div>
+        </div>
+    </div>
+    <!-- Добавьте больше проектов -->
+
+    <div class="portfolio-item">
+        <img src="https://via.placeholder.com/300x250.png?text=Project+1" alt="Проект 3">
+        <div class="portfolio-info">
+            <h3>Корпоративный сайт</h3>
+            <p>UI/UX дизайн для FinTech компании</p>
+            <div class="portfolio-hover">
+                <p>Инструменты: Figma, Photoshop, Illustrator</p>
+                <a href="#" class="project-link">Подробнее →</a>
+            </div>
+        </div>
+    </div>
+    <!-- Добавьте больше проектов -->
+    <div class="portfolio-item">
+        <img src="https://via.placeholder.com/300x250.png?text=Project+1" alt="Проект 4">
+        <div class="portfolio-info">
+            <h3>Корпоративный сайт</h3>
+            <p>UI/UX дизайн для FinTech компании</p>
+            <div class="portfolio-hover">
+                <p>Инструменты: Figma, Photoshop, Illustrator</p>
+                <a href="#" class="project-link">Подробнее →</a>
+            </div>
+        </div>
+    </div>
+    <!-- Добавьте больше проектов -->
+</div>
+{% endblock %}
