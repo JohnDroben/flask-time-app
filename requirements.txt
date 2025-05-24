@@ -1,0 +1,14 @@
+
+pip install Flask
+pip install datetime
+pip install requests
+pip install logging
+pip install json
+pip install os
+pip install sys
+pip install flask
+pip install jinja2
+pip install markupsafe
+pip install werkzeug
+
+

@@ -1,9 +1,22 @@
-from flask import Flask, render_template, request
+import os
+from flask  import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 import logging
+from flask_wtf.csrf import CSRFProtect
+
+
+
+
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
+csrf = CSRFProtect(app)
 
+
+
+
+posts = [
+]
 # Настройка логирования в начале
 logging.basicConfig(
     filename='portfolio.log',
@@ -21,9 +34,18 @@ def index():
         current_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     )
 
-@app.route('/blog')
+@app.route('/blog', methods=['GET', 'POST'])
 def blog():
-    return render_template('blog.html')
+    global posts  # Временное решение для демонстрации
+    if request.method == 'POST':
+        new_post = {
+            'title': request.form.get('title'),
+            'body': request.form.get('body'),
+            'created_at': datetime.now()
+        }
+        posts.append(new_post)
+        return redirect(url_for('blog'))
+    return render_template('blog.html', posts=posts)
 
 @app.route('/contacts')
 def contacts():
